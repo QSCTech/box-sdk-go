@@ -1,15 +1,17 @@
 package box
 
-import "github.com/Hexilee/gotten"
+import (
+	"github.com/Hexilee/gotten"
+)
 
 type (
 	Service struct {
-		Upload      func(param *UploadParam) (gotten.Response, error) `method:"POST" path:"add_item"`
-		Change      func(param *ChangeParam) (gotten.Response, error) `method:"POST" path:"change_item"`
-		Stat        func(param *TokenParam) (gotten.Response, error)  `path:"issec/{token}"`              // resp: YES / NO
-		Verify      func(param *SecParam) (gotten.Response, error)    `path:"verify/{token}/{sec_token}"` // resp: Y / N
-		Download    func(param *TokenParam) (gotten.Response, error)  `path:"get/{token}"`
-		DownloadSec func(param *SecParam) (gotten.Response, error)    `path:"get/{token}/{sec_token}"`    // fail: html, no Content-Disposition
+		Upload      func(param *UploadParam) (gotten.Response, error) `method:"POST" path:"item/add_item"`
+		Change      func(param *ChangeParam) (gotten.Response, error) `method:"POST" path:"item/change_item"`
+		Stat        func(param *TokenParam) (gotten.Response, error)  `path:"item/issec/{token}"`              // resp: YES / NO
+		Verify      func(param *SecParam) (gotten.Response, error)    `path:"item/verify/{token}/{sec_token}"` // resp: Y / N
+		Download    func(param *TokenParam) (gotten.Response, error)  `path:"item/get/{token}"`
+		DownloadSec func(param *SecParam) (gotten.Response, error)    `path:"item/get/{token}/{sec_token}"` // fail: html, no Content-Disposition
 	}
 )
 type (
@@ -29,7 +31,7 @@ type (
 			Filename   string
 			Secret     string
 			SecureId   string
-			token      string
+			Token      string
 		}
 		Err        int // 0: SUCCESS; -1: Fail
 		Expiration int

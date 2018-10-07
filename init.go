@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	service *Service
+	service = new(Service)
 
 	mediaChecker gotten.CheckerFunc = func(response *http.Response) bool {
 		return response.Header.Get(headers.HeaderContentDisposition) != ""
@@ -60,7 +60,7 @@ func init() {
 		panic(err)
 	}
 	creator, err := gotten.NewBuilder().
-		SetBaseUrl("https://box.zjuqsc.com/item").
+		SetBaseUrl("https://box.zjuqsc.com").
 		AddReaderUnmarshaler(fileCtr, mediaChecker).
 		AddUnmarshalFunc(handlePlainText, textChecker).
 		Build()
