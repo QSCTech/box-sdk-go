@@ -29,8 +29,8 @@ type (
 			Error      string
 			Expiration int
 			Filename   string
-			Secret     string
-			SecureId   string
+			Secret     string `json:"secret"`
+			SecureId   string `json:"secure_id"`
 			Token      string
 		}
 		Err        int // 0: SUCCESS; -1: Fail
