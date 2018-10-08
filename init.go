@@ -57,7 +57,7 @@ func init() {
 	//	panic(err)
 	//}
 	creator, err := gotten.NewBuilder().
-		SetBaseUrl("https://box.zjuqsc.com").
+		SetBaseUrl("https://box.zjuqsc.com/item").
 		AddReaderUnmarshaler(fileCtr, mediaChecker).
 		AddUnmarshalFunc(handlePlainText, textChecker).
 		Build()
