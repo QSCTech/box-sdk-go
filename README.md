@@ -1,0 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/QSCTech/box-sdk-go/badge.svg)](https://coveralls.io/github/QSCTech/box-sdk-go)
+[![Go Report Card](https://goreportcard.com/badge/github.com/QSCTech/box-sdk-go)](https://goreportcard.com/report/github.com/QSCTech/box-sdk-go)
+[![Build Status](https://travis-ci.org/QSCTech/box-sdk-go.svg?branch=master)](https://travis-ci.org/QSCTech/box-sdk-go)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/QSCTech/box-sdk-go/blob/master/LICENSE)
+[![Documentation](https://godoc.org/github.com/QSCTech/box-sdk-go?status.svg)](https://godoc.org/github.com/QSCTech/box-sdk-go)

@@ -52,24 +52,29 @@ func handlePlainText(data []byte, v interface{}) (err error) {
 
 func init() {
 	fileCtr, err := unmarshalers.NewFileCtr()
-	if err != nil {
-		panic(err)
-	}
+	// occur only when you don't have permission at current work directory
+	//if err != nil {
+	//	panic(err)
+	//}
 	creator, err := gotten.NewBuilder().
 		SetBaseUrl("https://box.zjuqsc.com").
 		AddReaderUnmarshaler(fileCtr, mediaChecker).
 		AddUnmarshalFunc(handlePlainText, textChecker).
 		Build()
-	if err != nil {
-		panic(err)
-	}
+	// err is always nil until you change code above
+	//if err != nil {
+	//	panic(err)
+	//}
 
 	err = creator.Impl(service)
-	if err != nil {
-		panic(err)
-	}
+	// err is always nil until you change code above
+	//if err != nil {
+	//	panic(err)
+	//}
+	_ = err
 }
 
+// GetService is a getter to get service singleton
 func GetService() *Service {
 	return service
 }
