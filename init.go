@@ -20,11 +20,7 @@ var (
 		contentLength := response.Header.Get(headers.HeaderContentLength)
 		contentType := response.Header.Get(headers.HeaderContentType)
 		length, err := strconv.Atoi(contentLength)
-		if err != nil {
-			yes = false
-		}
-
-		if yes {
+		if err == nil {
 			yes = length < 10 && (contentType == headers.MIMETextPlain || contentType == headers.MIMETextHTMLCharsetUTF8)
 		}
 		return
@@ -37,13 +33,13 @@ func handlePlainText(data []byte, v interface{}) (err error) {
 		err = errors.New("param kind must be *bool")
 	}
 
-	if err != nil {
+	if err == nil {
 		switch string(data) {
 		case "Y":
 			fallthrough
 		case "YES":
 			*yes = true
-		case "NO":
+		case "NO ":
 			fallthrough
 		case "N":
 			*yes = false
