@@ -6,7 +6,9 @@
 
 ### QSC BOX SDK
 
-This is a demo project for [gotten](https://github.com/Hexilee/gotten).
+V1 is a demo project for [gotten](https://github.com/Hexilee/gotten).
+
+[V2](https://github.com/QSCTech/box-sdk-go/blob/master/v2) is released.
 
 ### Usage
 
