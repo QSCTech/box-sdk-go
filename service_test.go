@@ -1,9 +1,9 @@
 package box_test
 
 import (
-	"box"
 	"github.com/Hexilee/gotten"
 	"github.com/Hexilee/gotten/unmarshalers"
+	"github.com/QSCTech/box-sdk-go"
 	"github.com/stretchr/testify/assert"
 	"math/rand"
 	"testing"
